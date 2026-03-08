@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Anthony Semal | Technicien PC/Réseaux/Cybersécurité</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --success-color: #198754;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --info-color: #0dcaf0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        /* Header Section */
+        .header-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .header-section h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header-section .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Card Styles */
+        .card {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        /* Section Fade Animation */
+        .section-fade {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+        }
+
+        .timeline-item {
+            padding-left: 40px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 40px);
+            background: var(--primary-color);
+        }
+
+        /* Skills */
+        .skill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px !important;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0a58ca 100%) !important;
+        }
+
+        .skill-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+        }
+
+        /* Experience Cards */
+        .experience-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border: 1px solid rgba(13, 110, 253, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0a58ca 100%);
+            color: white;
+            box-shadow: 0 15px 30px rgba(13, 110, 253, 0.3);
+        }
+
+        .experience-card i {
+            font-size: 2em;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .experience-card:hover i {
+            color: white;
+        }
+
+        /* Contact Badges */
+        .contact-badge {
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .contact-badge:hover {
+            background: white;
+            color: var(--primary-color);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+        }
+
+        /* Language Progress */
+        .language-item {
+            padding: 20px;
+            background: var(--light-color);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .language-item:hover {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .progress {
+            background-color: rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        /* Certifications */
+        .certification-card {
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .certification-card img {
+            max-height: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .certification-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Badges */
+        .badge {
+            padding: 6px 12px !important;
+            font-size: 0.9em;
+            border-radius: 20px;
+        }
+
+        /* Container */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-section {
+                padding: 40px 20px;
+            }
+
+            .header-section h1 {
+                font-size: 2em;
+            }
+
+            .header-section .subtitle {
+                font-size: 1.2em;
+            }
+
+            .social-links {
+                gap: 10px;
+            }
+
+            .social-links a {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+
+            .card-body {
+                padding: 20px;
+            }
+        }
+
+        /* Hover Shadow */
+        .hover-shadow {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Button Styles */
+        .btn-outline-primary {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+        }
+
+        /* Skill Categories */
+        .skill-category {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .skill-category h3 {
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <div class="header-section animate__animated animate__fadeIn">
+            <img src="img/moi2.jpg" alt="Anthony Semal" class="profile-img animate__animated animate__zoomIn">
+            <h1 class="animate__animated animate__fadeInDown">Anthony Semal</h1>
+            <p class="subtitle animate__animated animate__fadeInUp">Technicien PC / Réseaux / Cybersécurité</p>
+            
+            <div class="animate__animated animate__fadeInUp">
+                <a href="mailto:anthony_sl@ikmail.com" class="contact-badge">
+                    <i class="fas fa-envelope"></i> anthony_sl@ikmail.com
+                </a>
+                <a href="tel:+32470360170" class="contact-badge">
+                    <i class="fas fa-phone"></i> +32 470 360 170
+                </a>
+            </div>
+
+            <div class="social-links animate__animated animate__fadeInUp">
+                <a href="https://www.linkedin.com/in/anthony-semal" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Totoche001" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://62.235.226.69:8086/Totoche001" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-git-alt"></i> Forgejo
+                </a>
+                <a href="https://gitlab.com/totoche007" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-gitlab"></i> GitLab
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container py-5">
+            <div class="row g-4">
+                <!-- About -->
+                <div class="col-lg-6 section-fade">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h2 class="card-title"><i class="fas fa-user me-2"></i>À propos de moi</h2>
+                            <p>Ayant récemment obtenu mon baccalauréat, j'ai acquis des bases solides en programmation et je suis passionné par le montage, la réparation, la configuration de PC et la cybersécurité. Actuellement en formation en tant que cyber-analyst à TechnoFuturTic, je m'oriente vers le côté blue-team, notamment l'analyse de logs au sein d'un SOC.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="col-lg-6 section-fade">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h2 class="card-title"><i class="fas fa-graduation-cap me-2"></i>Formation</h2>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <h5 class="fw-bold">Cyber-Analyst (SOC Analyst)</h5>
+                                    <p class="fst-italic text-muted mb-1">06/2024 – 09/2025 | Gosselies, Charleroi</p>
+                                    <p>Analyse de logs avec Wireshark et Splunk, missions blue-team, certification SAL 1.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5 class="fw-bold">Du réel au virtuel</h5>
+                                    <p class="fst-italic text-muted mb-1">09/2024 - 12/2024 | Cesep, Nivelles</p>
+                                    <p>Réalisation d'un escape game immersif.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5 class="fw-bold">Junior Cyber-Analyst</h5>
+                                    <p class="fst-italic text-muted mb-1">05/2022 - 12/2022 | Becode, Charleroi</p>
+                                    <p>Pentesting et participation à des CTF.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5 class="fw-bold">Baccalauréat en informatique de gestion</h5>
+                                    <p class="fst-italic text-muted mb-1">2023-2024 | IPAMC Ecaussinnes</p>
+                                    <p>Projet : CyberCompagnon (plateforme e-learning).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Experience -->
+                <div class="col-12 section-fade">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h2 class="card-title"><i class="fas fa-briefcase me-2"></i>Expériences Professionnelles</h2>
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="experience-card p-4 rounded">
+                                        <i class="fa-solid fa-hexagon-nodes"></i>
+                                        <h5 class="fw-bold mt-3">Stagiaire n8n</h5>
+                                        <p class="fst-italic small">10/2025 - 12/2025</p>
+                                        <p class="small"><strong>RTBF – CSIRT</strong></p>
+                                        <ul class="list-unstyled small">
+                                            <li><i class="fas fa-check-circle text-success me-2"></i>Automation n8n</li>
+                                            <li><i class="fas fa-check-circle text-success me-2"></i>Workflows SOC</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="experience-card p-4 rounded">
+                                        <i class="fa-solid fa-code"></i>
+                                        <h5 class="fw-bold mt-3">Programmeur</h5>
+                                        <p class="fst-italic small">03/2023 - 05/2023</p>
+                                        <p class="small"><strong>Zen-Project.be</strong></p>
+                                        <ul class="list-unstyled small">
+                                            <li><i class="fas fa-check-circle text-success me-2"></i>WinDev</li>
+                                            <li><i class="fas fa-check-circle text-success me-2"></i>Support tech</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="experience-card p-4 rounded">
+                                        <i class="fa-solid fa-globe"></i>
+                                        <h5 class="fw-bold mt-3">Webmaster</h5>
+                                        <p class="fst-italic small">02/2019 - 05/2019</p>
+                                        <p class="small"><strong>Espace Furcan</strong></p>
+                                        <ul class="list-unstyled small">
+                                            <li><i class="fas fa-check-circle text-success me-2"></i>Symfony 4</li>
+                                            <li><i class="fas fa-check-circle text-success me-2"></i>Support client</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="experience-card p-4 rounded">
+                                        <i class="fa-solid fa-leaf"></i>
+                                        <h5 class="fw-bold mt-3">Agent Environnement</h5>
+                                        <p class="fst-italic small">03/2014</p>
+                                        <p class="small"><strong>Commune de Braine-le-Comte</strong></p>
+                                        <ul class="list-unstyled small">
+                                            <li><i class="fas fa-check-circle text-success me-2"></i>Événements</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="col-lg-6 section-fade">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h2 class="card-title"><i class="fas fa-code me-2"></i>Compétences</h2>
+                            
+                            <div class="skill-category mb-4">
+                                <h5 class="text-secondary fw-bold mb-3">Systèmes & Réseaux</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="skill-badge"><i class="fa-solid fa-computer"></i>Structure PC</span>
+                                    <span class="skill-badge"><i class="fas fa-network-wired"></i>Active Directory</span>
+                                    <span class="skill-badge"><i class="fab fa-linux"></i>Linux</span>
+                                    <span class="skill-badge"><i class="fa-solid fa-server"></i>Proxmox</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category mb-4">
+                                <h5 class="text-secondary fw-bold mb-3">Développement Web</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="skill-badge"><i class="fab fa-html5"></i>HTML</span>
+                                    <span class="skill-badge"><i class="fab fa-php"></i>PHP</span>
+                                    <span class="skill-badge"><i class="fas fa-database"></i>MySQL</span>
+                                    <span class="skill-badge"><i class="fab fa-git-alt"></i>Git</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category mb-4">
+                                <h5 class="text-secondary fw-bold mb-3">Cybersécurité</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="skill-badge"><i class="fas fa-shield-alt"></i>Ghidra</span>
+                                    <span class="skill-badge"><i class="fas fa-network-wired"></i>Wireshark</span>
+                                    <span class="skill-badge"><i class="fas fa-search"></i>Nmap</span>
+                                    <span class="skill-badge"><i class="fas fa-bug"></i>Burpsuite</span>
+                                    <span class="skill-badge"><i class="fas fa-shield-alt"></i>Wazuh</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h5 class="text-secondary fw-bold mb-3">Misc</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="skill-badge"><i class="fas fa-gamepad"></i>Unreal Engine</span>
+                                    <span class="skill-badge"><i class="fas fa-microchip"></i>Arduino</span>
+                                    <span class="skill-badge"><i class="fas fa-microchip"></i>Raspberry Pi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="col-lg-6 section-fade">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h2 class="card-title"><i class="fas fa-globe me-2"></i>Langues</h2>
+                            
+                            <div class="language-item">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <strong>🇫🇷 Français</strong>
+                                    <span class="badge bg-success">Langue maternelle</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" style="width: 100%"></div>
+                                </div>
+                            </div>
+
+                            <div class="language-item">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <strong>🇬🇧 Anglais</strong>
+                                    <span class="badge bg-info">A1 - Basique</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 20%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="col-12 section-fade">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h2 class="card-title"><i class="fas fa-star me-2"></i>Soft Skills & Centres d'intérêt</h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5 class="text-secondary fw-bold mb-3">Soft Skills</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-info p-2"><i class="fas fa-search me-1"></i>Curieux</span>
+                                        <span class="badge bg-info p-2"><i class="fas fa-hourglass-end me-1"></i>Patient</span>
+                                        <span class="badge bg-info p-2"><i class="fas fa-stream me-1"></i>Flexible</span>
+                                        <span class="badge bg-info p-2"><i class="fas fa-brain me-1"></i>Logique</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="text-secondary fw-bold mb-3">Centres d'intérêt</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-secondary p-2"><i class="fas fa-film me-1"></i>Cinéma</span>
+                                        <span class="badge bg-secondary p-2"><i class="fas fa-star me-1"></i>Espace</span>
+                                        <span class="badge bg-secondary p-2"><i class="fa-solid fa-theater-masks me-1"></i>Théâtre</span>
+                                        <span class="badge bg-secondary p-2"><i class="fas fa-camera me-1"></i>Photo</span>
+                                        <span class="badge bg-secondary p-2"><i class="fas fa-microchip me-1"></i>Électronique</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="col-12 section-fade">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h2 class="card-title"><i class="fa-solid fa-certificate me-2"></i>Certifications</h2>
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="certification-card card h-100 shadow-sm">
+                                        <img src="img/certif/ethicalhacker.webp" alt="Ethical Hacker" class="card-img-top">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Ethical Hacker</h6>
+                                            <p class="small text-muted">01/07/2025</p>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-file-pdf me-1"></i> PDF
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="certification-card card h-100 shadow-sm">
+                                        <img src="img/certif/cyberops.webp" alt="CyberOps" class="card-img-top">
+                                        <div class="card-body">
+                                            <h6 class="card-title">CyberOps Associate</h6>
+                                            <p class="small text-muted">07/08/2025</p>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-file-pdf me-1"></i> PDF
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="certification-card card h-100 shadow-sm">
+                                        <img src="img/certif/thmsal1.webp" alt="SAL1" class="card-img-top">
+                                        <div class="card-body">
+                                            <h6 class="card-title">TryHackMe SAL1</h6>
+                                            <p class="small text-muted">18/09/2025</p>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-file-pdf me-1"></i> PDF
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="certification-card card h-100 shadow-sm">
+                                        <img src="img/certif/THM_soc2.webp" alt="SAL2" class="card-img-top">
+                                        <div class="card-body">
+                                            <h6 class="card-title">TryHackMe SAL2</h6>
+                                            <p class="small text-muted">10/10/2025</p>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-file-pdf me-1"></i> PDF
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-fade').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
